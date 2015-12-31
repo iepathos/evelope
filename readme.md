@@ -16,3 +16,6 @@ git clone https://github.com/solutionspecialist/evelope.git .````
 + Install dependencies
 ````shell
 pip install -r requirements.txt````
++ Run development server
+````shell
+./manage.py runserver````
