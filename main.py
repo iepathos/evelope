@@ -15,6 +15,7 @@ class Main(flask.views.MethodView):
                 'gas' : 10000,
                 'emergency' : 750000
             }
+            # Add up all piles to get total balance #
             for pile in piles:
                 balance = balance + piles[pile]
             # Sort Piles From Largest - Smallest by value #
