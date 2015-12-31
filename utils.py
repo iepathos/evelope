@@ -30,3 +30,7 @@ def close_db(error):
     """Closes the database again at the end of the request."""
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
+
+# Converts amount in pennies to dollars.cents with formatting
+def formatDollars(value):
+    return '${:,.2f}'.format(value/100)
