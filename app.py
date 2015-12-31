@@ -1,8 +1,15 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import flask.views, settings, utils, sqlite3
+from flask.ext.assets import Environment, Bundle
+
+# Views
+from main import Main
+from logout import Logout
+from login import Login
+
 app = flask.Flask(__name__)
 
-
-from flask.ext.assets import Environment, Bundle
 
 # Converts amount in pennies to dollars.cents with formatting
 def formatDollars(value):
@@ -18,13 +25,10 @@ app.secret_key = settings.secretKey
 users = settings.users
 DATABASE = settings.DATABASE
 
+
 def connect_db():
     return sqlite3.connect(DATABASE)
 
-# Views
-from main import Main
-from logout import Logout
-from login import Login
 
 # Routes
 app.add_url_rule('/',
@@ -37,4 +41,4 @@ app.add_url_rule('/logout',
                     view_func=Logout.as_view('logout'))
 
 if __name__ == "__main__":
-   app.run(host='0.0.0.0', port=80, debug=True)
+   app.run(host='0.0.0.0', port=2525, debug=True)
