@@ -8,14 +8,18 @@ Development Environment Setup
 -----------------------------
 
 + Create Python2.7 virtualenv  (virtualenvwrapper recommended)
-````shell
-mkproject evelope````
+````
+mkproject evelope
+````
 + Clone repository
-````shell
-git clone https://github.com/solutionspecialist/evelope.git .````
+````
+git clone https://github.com/solutionspecialist/evelope.git .
+````
 + Install dependencies
-````shell
-pip install -r requirements.txt````
+````
+pip install -r requirements.txt
+````
 + Run development server
-````shell
-./manage.py runserver````
+````
+./manage.py runserver
+````
