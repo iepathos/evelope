@@ -1,14 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import flask.views, settings, utils, sqlite3
+import flask.views, settings
 from flask.ext.assets import Environment, Bundle
 from flask import Flask
 from utils import formatDollars
+from core import db
+from users import User
 
 # Views
 from main import Main
 from logout import Logout
 from login import Login
+
+
 
 
 def route_app(app):
@@ -37,7 +41,8 @@ def register_assets(app):
 
 def create_app():
     app = Flask(__name__)
-    app.secret_key = settings.secretKey
+    app.config.from_object('settings')
     route_app(app)
     register_assets(app)
+    db.init_app(app)
     return app
