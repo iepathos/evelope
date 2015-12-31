@@ -1,0 +1,19 @@
+.login { text-align:center;}
+.left {
+    margin-top:25%;
+    text-align:right;
+}
+.left h1 { margin:0;}
+.piles {
+    margin-top:10%;
+}
+.pile {
+        border:1px solid #bbb;
+        margin:4px 0;
+        clear:both;
+}
+.pile h3 {
+    text-align:center;
+    margin:0;
+    padding:1em 0;
+}

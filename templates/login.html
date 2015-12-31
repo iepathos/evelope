@@ -1,0 +1,15 @@
+{% extends "theme.html" %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="login one-half column" style="margin-top: 25%">
+        <form action="{{url_for('login')}}" method="post">
+            <input type="text" name="username" /><br />
+            <input type="password" name="passwd"  /><br />
+            <input type="submit" value="Log In" />
+        </form>
+    </div>
+</div>
+{% endblock %}
