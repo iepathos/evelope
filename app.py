@@ -11,18 +11,6 @@ from logout import Logout
 from login import Login
 
 
-def register_assets(app):
-    app.jinja_env.filters['formatDollars'] = formatDollars
-
-    assets = Environment(app)
-
-    css = Bundle('css/normalize.css',
-                 'css/skeleton.css',
-                 'css/custom.css', filters='cssmin', output='gen/packed.css')
-    assets.register('css_all', css)
-    return app
-
-
 def route_app(app):
     app.add_url_rule('/',
                      view_func=Main.as_view('main'),
@@ -32,6 +20,18 @@ def route_app(app):
                      methods=["GET", "POST"])
     app.add_url_rule('/logout',
                      view_func=Logout.as_view('logout'))
+    return app
+
+
+def register_assets(app):
+    app.jinja_env.filters['formatDollars'] = formatDollars
+
+    assets = Environment(app)
+
+    css = Bundle('css/normalize.css',
+                 'css/skeleton.css',
+                 'css/custom.css', filters='cssmin', output='gen/packed.css')
+    assets.register('css_all', css)
     return app
 
 
